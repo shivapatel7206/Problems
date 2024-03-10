@@ -1,20 +1,25 @@
 class Solution {
 public:
-    int search(vector<int>& nums, int target) {
-        int start = 0;
-        int end = nums.size() - 1;
-        while (start <= end){
-            int mid = start + (end - start) / 2;
-            if (nums[mid] == target){
-                return mid;
-            }
-            else if (nums[mid] < target){
-                start = mid + 1;
-            }
-            else{
-                end = mid - 1;
-            }
+    int search(vector<int>& arr, int key) {
+
+        int n = arr.size(); // vector gives ki kitne element present hai...
+        int start=0, end = n-1, mid;
+
+        while(start<=end) {
+            //Mid to find karo
+            mid = (start+end)/2;
+            //arr[mid]==key
+            if(arr[mid]==key)
+            return mid;
+            //arr[mid,key
+            else if(arr[mid]<key)
+            start = mid+1;
+            // arr[mid]>key
+            else
+            end = mid-1;
         }
+
         return -1;
-    }
+        
+        }
 };
