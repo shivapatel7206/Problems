@@ -1,10 +1,16 @@
-class Solution {
+class Solution { // 509.Fibonacci Number [Leet-Code]
 public:
     int fib(int n) {
-        int fb[35];
-        fb[0]=0;
-        fb[1]=1;
-        for(int i=2;i<35;i++) fb[i]=fb[i-1]+fb[i-2];
-        return fb[n];
+        // base case
+        if(n==0)
+        return 0;
+
+    if(n == 1)
+        return 1;
+
+    int ans = fib(n-1) + fib(n-2);
+
+    return ans;
+
     }
 };
